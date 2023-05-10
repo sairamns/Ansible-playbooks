@@ -1,0 +1,20 @@
+---
+- name: this pb installs pkgs
+  hosts: 
+         webservers
+         dbservers
+         appservers
+  become: true
+  tasks: 
+  - name: install pkgs
+    yum:
+      name: ['git', 'httpd', 'nginx', 'gcc', 'make', 'telnet', 'tree' ]   
+      state: installed
+    when: ansible_os_family == "RedHat"
+
+  - name: install pkgs
+    apt:
+      name: ['git', 'apache2', 'nginx', 'gcc', 'make', 'telnet', 'tree' ]
+      state: present
+    when: ansible_os_family == "Debian"
+

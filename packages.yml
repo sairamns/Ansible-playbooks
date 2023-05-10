@@ -1,0 +1,11 @@
+---
+- name: this playbook install tree pkg
+  hosts: 
+         webservers
+         dbservers
+  # become: yes
+  tasks:
+  - name: installing tree package
+    apt:
+      name: tree
+      state: latest

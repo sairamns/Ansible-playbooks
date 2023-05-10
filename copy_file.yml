@@ -1,0 +1,11 @@
+---
+- name: this plabook copies a file from src to destpath
+  hosts: all
+  become: yes
+  tasks: 
+  - name: copying index.html
+    copy:
+      src: /home/ansadmin/index.html
+      dest: /home/ansadmin
+      mode : 0777
+      owner: user1  

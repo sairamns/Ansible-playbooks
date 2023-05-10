@@ -1,0 +1,25 @@
+---
+- name: this playbook installs apache w.r.t to os family
+  hosts: all
+  become: yes
+  tasks:
+  - name: install apache2 pkg
+    apt:
+      name: apache2
+      state: present
+    when: ansible_os_family == "Debian"
+
+  - name: install httpd pkg
+    yum:
+      name: httppppp----
+      state: present
+    when: ansible_os_family == "RedHat"
+    ignore_errors: yes
+
+  - name: coping index file
+    copy:
+      src: /home/ansadmin/index.html
+      dest: /var/www/html
+      mode: 0777
+
+

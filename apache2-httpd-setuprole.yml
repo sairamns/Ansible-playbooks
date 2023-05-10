@@ -1,0 +1,6 @@
+---
+- name: this pb runs apache2-httpd-role.yml
+  hosts: all
+  become: yes
+  roles:
+  - apache2-httpd-role.yml

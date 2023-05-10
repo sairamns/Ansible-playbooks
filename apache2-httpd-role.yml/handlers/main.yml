@@ -1,0 +1,14 @@
+---
+# handlers file for apache2-httpd-role.yml
+- name: restart apache2 service
+  service:
+    name: apache2
+    state: restarted
+  when: ansible_os_family == "Debian"
+
+- name: restart httpd service
+  service:
+    name: httpd
+    state: restarted
+  when: ansible_os_family == "RedHat"
+

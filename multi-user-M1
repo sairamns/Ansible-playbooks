@@ -1,0 +1,11 @@
+---
+- name: this pb creates multi user
+  hosts: all
+  become: true
+  tasks:
+  - name: this add list 0f users
+    user: name='{{item}}' state=absent
+    with_items:
+    - cat
+    - dog
+    - cow

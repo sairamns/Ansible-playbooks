@@ -1,0 +1,9 @@
+---
+- name: this playbook deletes demofile
+  hosts: all
+  become: true
+  tasks:
+  - name: deleting demofile
+    file:
+      path: /home/ansadmin/demofile
+      state: absent

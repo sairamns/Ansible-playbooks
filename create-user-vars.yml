@@ -1,0 +1,11 @@
+---
+- name: pb creates users
+  hosts: all
+  become: true
+  vars: 
+    user: ROHIT
+  tasks:
+  - name: creates a user {{user}}
+    user: 
+      name: '{{user}}'
+      state: present 

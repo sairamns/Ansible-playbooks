@@ -1,0 +1,16 @@
+---
+- name: deletes  multi users
+  hosts: all
+  become: yes
+  tasks:
+  - name: deletes a user {{user}}
+    user:
+      name: '{{ item }}'
+      state: absent
+    with_items:
+    - sravan
+    - manu
+    - rpr
+    - user11
+    - user12
+

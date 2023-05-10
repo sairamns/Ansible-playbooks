@@ -1,0 +1,14 @@
+---
+- name: this playbook downloads and starts apache2 pkg
+  hosts: all
+  become: true
+  tasks: 
+  - name: install apache2 pkg
+    apt:
+      name: apache2
+      state: present
+
+  - name: restart apache2 pkg
+    service: 
+      name: apache2
+      state: restarted
