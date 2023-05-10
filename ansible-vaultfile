@@ -1,0 +1,21 @@
+1. ansible-vault:
+-----------------
+
+> ansible-vault is used to encrypt yaml files in two ways, 1. while creating yaml 2. encrypting for existing yaml files.
+
+> it asks a password for displaying, editing, creating , to run playbook and to rekey playbook.
+
+> ansible-vault create playbookname  (this is used to encrypt while creating a playbook)
+
+> ansible-vault edit playbookname (this is used to edit the created playbook)
+
+> ansible-vault view playbookname ( this is to view the playbook content)
+
+> ansible-playbook playbookname --ask-vault-pass ( this is to run encrypted ansible-vault playbook)
+
+> ansible-vault encrypt playbookname ( this is to encryt the existing playbook)
+
+> ansible-vault decrypt playbookname ( this is to decrypt the existing playbook)
+
+> ansible-vault rekey playbookname (this is to change the password of  ansible-vault playbook)
+
